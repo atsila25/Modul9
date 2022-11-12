@@ -1,0 +1,97 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Pendahuluan3 extends JFrame {
+    Label first = new Label ("Masukkan Angka Pertama :");
+    Label second = new Label("Masukkan Angka Kedua :");
+    Label firstt = new Label ("Hasil :");
+    TextField tfi = new TextField(15);
+    TextField tfie = new TextField(15);
+    TextField tfield = new TextField(15);    
+    JButton bt1 = new JButton("+");
+    JButton bt2 = new JButton("-");
+    JButton bt3 = new JButton("*");
+    JButton bt4 = new JButton("/");
+Pendahuluan3(){
+    setTitle("Design");
+    setSize(190, 300);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+void Komponen(){
+    getContentPane().setLayout(new FlowLayout());
+    add(first);
+    add(tfi);
+    add(second);
+    add(tfie);
+    add(firstt);
+    add(tfield);
+    getContentPane().add(bt1);
+    bt1.setBounds(10, 180, 40, 30);
+    getContentPane().add(bt2);
+    bt2.setBounds(70, 180, 40, 30);
+    getContentPane().add(bt3);
+    bt3.setBounds(110, 180, 40, 30);
+    getContentPane().add(bt4);
+    bt4.setBounds(70, 210, 40, 30);
+}
+void reaksi(){
+    bt1.addMouseListener (new MouseListener() {
+        public void mouseClicked(MouseEvent me) {
+            int a1, a2, a3;
+            a1= Integer.parseInt(tfi.getText());
+            a2 = Integer.parseInt(tfie.getText());
+            a3 = a1+a2;
+            tfield.setText(Integer.toString(a3));
+        }
+        public void mousePressed(MouseEvent me) {}
+        public void mouseReleased(MouseEvent me) {}
+        public void mouseEntered(MouseEvent me) {}
+        public void mouseExited(MouseEvent me) {}
+    }); 
+    bt2.addMouseListener(new MouseListener() {
+        public void mouseClicked(MouseEvent me) {
+            int a1, a2, a3;
+            a1= Integer.parseInt(tfi.getText());
+            a2= Integer.parseInt(tfie.getText());
+            a3= a1-a2;
+            tfield.setText(Integer.toString(a3));
+        }
+        public void mousePressed(MouseEvent me) {}
+        public void mouseReleased(MouseEvent me) {}
+        public void mouseEntered(MouseEvent me) {}
+        public void mouseExited(MouseEvent me) {}
+    });
+        bt3.addMouseListener(new MouseListener() {
+        public void mouseClicked(MouseEvent me) {
+            int a1, a2, a3;
+            a1= Integer.parseInt(tfi.getText());
+            a2= Integer.parseInt(tfie.getText());
+            a3= a1*a2;
+            tfield.setText(Integer.toString(a3));
+        }
+        public void mousePressed(MouseEvent me) {}
+        public void mouseReleased(MouseEvent me) {}
+        public void mouseEntered(MouseEvent me) {}
+        public void mouseExited(MouseEvent me) {}
+    });
+        bt4.addMouseListener(new MouseListener() {
+        public void mouseClicked(MouseEvent me) {
+            int a1, a2, a3;
+            a1= Integer.parseInt(tfi.getText());
+            a2= Integer.parseInt(tfie.getText());
+            a3= a1/a2;
+            tfield.setText(Integer.toString(a3));
+        }
+        public void mousePressed(MouseEvent me) {}
+        public void mouseReleased(MouseEvent me) {}
+        public void mouseEntered(MouseEvent me) {}
+        public void mouseExited(MouseEvent me) {}
+    });
+        setVisible(true);
+}
+    public static void main(String[] args) {
+        Pendahuluan3 pd = new Pendahuluan3();
+        pd.Komponen();
+        pd.reaksi();
+    }
+}
