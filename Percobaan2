@@ -1,97 +1,177 @@
 import javax.swing.*;//mengimport resource code
 import java.awt.*;//mengimport resource code
 import java.awt.event.*;//mengimport resource code
-public class Pendahuluan3 extends JFrame {//menandakan nama class dan memanggil JFrame
-    Label first = new Label ("Masukkan Angka Pertama :"); //menginput komponen label
-    Label second = new Label("Masukkan Angka Kedua :"); //menginput komponen label
-    Label firstt = new Label ("Hasil :"); //menginput komponen label
-    TextField tfi = new TextField(15); //menginput komponen TextField
-    TextField tfie = new TextField(15); //menginput komponen TextField
-    TextField tfield = new TextField(15); //menginput komponen TextField    
-    JButton bt1 = new JButton("+"); //menginput komponen Button
-    JButton bt2 = new JButton("-"); //menginput komponen Button
-    JButton bt3 = new JButton("*"); //menginput komponen Button
-    JButton bt4 = new JButton("/"); //menginput komponen Button
-Pendahuluan3(){//mengawali method
-    setTitle("Design");//memberi judul frame
-    setSize(190, 300);//mengatur ukuran frame
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//menjalankan perintah close
-}//mengakhiri method
-void Komponen(){//method void
-    getContentPane().setLayout(new FlowLayout());//menginput flow layout
-    add(first);//memasukkan komponen first
-    add(tfi);//memasukkan komponen tfi
-    add(second);//memasukkan komponen second
-    add(tfie);//memasukkan komponen tfie
-    add(firstt);//memasukkan komponen firstt
-    add(tfield);//memasukkan komponen tfield
-    getContentPane().add(bt1);//memasukkan komponen bt1
-    bt1.setBounds(10, 180, 40, 30);//mengatur letak button
-    getContentPane().add(bt2);//memasukkan komponen bt2
-    bt2.setBounds(70, 180, 40, 30);//mengatur letak button
-    getContentPane().add(bt3);//memasukkan komponen bt3
-    bt3.setBounds(110, 180, 40, 30);//mengatur letak button
-    getContentPane().add(bt4);//memasukkan komponen bt4
-    bt4.setBounds(70, 210, 40, 30);//mengatur letak button
-}//mengakhiri method
-void reaksi(){//method void
-    bt1.addMouseListener (new MouseListener() {//menginput event listener pada komponen
-        public void mouseClicked(MouseEvent me) {//method mouseClicked
-            int a1, a2, a3;//inisiasi, menginput data
-            a1= Integer.parseInt(tfi.getText());//deklarasi
-            a2 = Integer.parseInt(tfie.getText());//deklarasi
-            a3 = a1+a2;//deklarasi
-            tfield.setText(Integer.toString(a3));//memunculkan text
+class Percobaan2 extends JFrame{//menandakan nama class dan memanggil JFrame
+    JTextArea text = new JTextArea();//menginput komponen textarea
+    JButton angka = new JButton("1");//menginput komponen button
+    JButton angka1 = new JButton("2");//menginput komponen button
+    JButton angka2 = new JButton("3");//menginput komponen button
+    JButton  angka3 = new JButton("4");//menginput komponen button
+    JButton angka4 = new JButton("5");//menginput komponen button
+    JButton angka5 = new JButton("6");//menginput komponen button
+    JButton angka6 = new JButton("7");//menginput komponen button
+    JButton angka7 = new JButton("8");//menginput komponen button
+    JButton angka8 = new JButton("9");//menginput komponen button
+    JButton angka9 = new JButton("0");    //menginput komponen button
+    JButton bt = new JButton("+");//menginput komponen button
+    JButton bt1 = new JButton("-");//menginput komponen button
+    JButton bt2 = new JButton("*");//menginput komponen button
+    JButton bt3 = new JButton("/");//menginput komponen button
+    JButton bt4 = new JButton("=");//menginput komponen button
+    JButton btC = new JButton("C");//menginput komponen button
+    Percobaan2(){//mengawali method
+        setTitle("Design Preview");//memberi judul frame
+        setLocation(600, 200);//mengatur lokasi munculnya frame
+        setSize(240, 260);//mengatur ukuran frame
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//menjalankan perintah close
+    }//mengakhiri method
+    void objek(){//method void
+        getContentPane().setLayout(null);//menginput null layout
+        getContentPane().setBackground(new Color(10,25,85));//mengatur warna pada background
+        getContentPane().add(text);//memasukkan komponen text
+        text.setBounds(5, 15, 210, 25);//mengatur letak Textarea
+        getContentPane().add(angka);//memasukkan komponen button
+        angka.setBounds(5, 50, 45, 30);//mengatur letak button
+        getContentPane().add(angka1);//memasukkan komponen button
+        angka1.setBounds(60, 50, 45, 30);//mengatur letak button        
+        getContentPane().add(angka2);//memasukkan komponen button
+        angka2.setBounds(115, 50, 45, 30);//mengatur letak button        
+        getContentPane().add(angka3);//memasukkan komponen button
+        angka3.setBounds(5, 90, 45, 30);//mengatur letak button        
+        getContentPane().add(angka4);//memasukkan komponen button
+        angka4.setBounds(60, 90, 45, 30);//mengatur letak button        
+        getContentPane().add(angka5);//memasukkan komponen button
+        angka5.setBounds(115, 90, 45, 30);//mengatur letak button        
+        getContentPane().add(angka6);//memasukkan komponen button
+        angka6.setBounds(5, 130, 45, 30);//mengatur letak button
+        getContentPane().add(angka7);//memasukkan komponen button
+        angka7.setBounds(60, 130, 45, 30);//mengatur letak button
+        getContentPane().add(angka8);//memasukkan komponen button
+        angka8.setBounds(115, 130, 45, 30);//mengatur letak button
+        getContentPane().add(angka9);//memasukkan komponen button   
+        angka9.setBounds(5, 170, 45, 30);//mengatur letak button
+        getContentPane().add(bt);//memasukkan komponen button
+        bt.setBounds(170, 50, 45, 30);//mengatur letak button
+        getContentPane().add(bt1);//memasukkan komponen button
+        bt1.setBounds(170, 90, 45, 30);//mengatur letak button
+        getContentPane().add(bt2);//memasukkan komponen button
+        bt2.setBounds(170, 130, 45, 30);//mengatur letak button
+        getContentPane().add(bt3);//memasukkan komponen button
+        bt3.setBounds(170, 170, 45, 30);//mengatur letak button
+        getContentPane().add(bt4);//memasukkan komponen button
+        bt4.setBounds(115, 170, 45, 30);//mengatur letak button
+        getContentPane().add(btC);//memasukkan komponen button
+        btC.setBounds(60, 170, 45, 30);//mengatur letak button
+    }//mengakhiri method
+    public double ank, jml;//method double, menginput data
+    public String simop;//method untuk menginput data
+    void reaksi(){//method void
+        angka.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked(MouseEvent me) {//method mouseClicked
+                text.setText(text.getText()+"1");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method
+        angka1.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"2");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method
+        angka2.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"3");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method  
+        angka3.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"4");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method
+        angka4.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"5");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method
+        angka5.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"6");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method
+        angka6.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"7");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method
+        angka7.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"8");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        }); //mengakhiri method
+        angka8.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"9");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method
+        angka9.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                text.setText(text.getText()+"0");//memunculkan text saat button ditekan
+            }//mengakhiri method
+        });//mengakhiri method
+        bt.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                ank=Integer.valueOf(text.getText());//deklarasi
+               text.setText("");//memunculkan text saat button ditekan                           
+                simop="plus";//deklarasi
+            }//mengakhiri method            
+        });//mengakhiri method
+        bt1.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                ank=Double.valueOf(text.getText());//deklarasi
+                text.setText("");//memunculkan text saat button ditekan                                
+                simop="minus";//deklarasi
+            }//mengakhiri method
+        });//mengakhiri method
+        bt2.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                ank=Double.valueOf(text.getText());//deklarasi
+                text.setText("");//memunculkan text saat button ditekan                              
+                simop="kali";//deklarasi
+            }//mengakhiri method
+        });//mengakhiri method
+        bt3.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                ank=Double.valueOf(text.getText());//deklarasi
+                text.setText("");//memunculkan text saat button ditekan                
+                simop="bagi";//deklarasi
+            }//mengakhiri method
+        });//mengakhiri method
+        bt4.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+                jml=Double.valueOf(text.getText());//deklarasi
+                
+                if (simop.equals("plus")){//kondisi yang akan dieksekusi
+                ank=ank+jml;//deklarasi, rumus
+                text.setText(String.valueOf(ank));//memunculkan text saat button ditekan
+                }else if (simop.equals("minus")){//kondisi yang akan dieksekusi
+                ank=ank-jml;//deklarasi, rumus
+                text.setText(String.valueOf(ank));//memunculkan text saat button ditekan
+                }else if (simop.equals("kali")){//kondisi yang akan dieksekusi
+                ank*=jml;//deklarasi, rumus
+                text.setText(String.valueOf(ank));//memunculkan text saat button ditekan
+                }else if (simop.equals("bagi")){//kondisi yang akan dieksekusi
+                ank/=jml;//deklarasi, rumus
+                }text.setText(String.valueOf(ank));//memunculkan text saat button ditekan
         }//mengakhiri method
-        public void mousePressed(MouseEvent me) {}//method mousePressed
-        public void mouseReleased(MouseEvent me) {}//method mouseReleased
-        public void mouseEntered(MouseEvent me) {}//method mouseEntered
-        public void mouseExited(MouseEvent me) {}//method mouseExited
-    }); //mengakhiri method
-    bt2.addMouseListener(new MouseListener() {//menginput event listener pada komponen
-        public void mouseClicked(MouseEvent me) {//method mouseClicked
-            int a1, a2, a3;//inisiasi, menginput data
-            a1= Integer.parseInt(tfi.getText());//deklarasi
-            a2= Integer.parseInt(tfie.getText());//deklarasi
-            a3= a1-a2;//deklarasi
-            tfield.setText(Integer.toString(a3));//memunculkan text
-        }//mengakhiri method
-        public void mousePressed(MouseEvent me) {}//method mousePressed
-        public void mouseReleased(MouseEvent me) {}//method mouseReleased
-        public void mouseEntered(MouseEvent me) {}//method mouseEntered
-        public void mouseExited(MouseEvent me) {}//method mouseExited
-    });//mengakhiri method
-        bt3.addMouseListener(new MouseListener() {//menginput event listener pada komponen
-        public void mouseClicked(MouseEvent me) {//method mouseClicked
-            int a1, a2, a3;//inisiasi, menginput data
-            a1= Integer.parseInt(tfi.getText());//deklarasi
-            a2= Integer.parseInt(tfie.getText());//deklarasi
-            a3= a1*a2;//deklarasi
-            tfield.setText(Integer.toString(a3));//memunculkan text
-        }//mengakhiri method
-        public void mousePressed(MouseEvent me) {}//method mousePressed
-        public void mouseReleased(MouseEvent me) {}//method mouseReleased
-        public void mouseEntered(MouseEvent me) {}//method mouseEntered
-        public void mouseExited(MouseEvent me) {}//method mouseExited
-    });//mengakhiri method
-        bt4.addMouseListener(new MouseListener() {//menginput event listener pada komponen
-        public void mouseClicked(MouseEvent me) {//method mouseClicked
-            int a1, a2, a3;//inisiasi, menginput data
-            a1= Integer.parseInt(tfi.getText());//deklarasi
-            a2= Integer.parseInt(tfie.getText());//deklarasi
-            a3= a1/a2;//deklarasi
-            tfield.setText(Integer.toString(a3));//memunculkan text
-        }//mengakhiri method
-        public void mousePressed(MouseEvent me) {}//method mousePressed
-        public void mouseReleased(MouseEvent me) {}//method mouseReleased
-        public void mouseEntered(MouseEvent me) {}//method mouseEntered
-        public void mouseExited(MouseEvent me) {}//method mouseExited
-    });//mengakhiri method
-        setVisible(true);//mengatur agar output ditampilkan
-}//mengakhiri method
+        });//mengakhiri method
+        btC.addMouseListener(new MouseAdapter() {//menginput event listener pada komponen
+            public void mouseClicked (MouseEvent me){//method mouseClicked
+            text.setText(" ");
+            }//mengakhiri method
+        });//mengakhiri method
+        setVisible(true);//mengatur agar output ditampilkan        
+    }//mengakhiri method
     public static void main(String[] args) {//mengindikasi main method
-        Pendahuluan3 pd = new Pendahuluan3();//membuat objek baru
-        pd.Komponen();//memanggil method komponen
-        pd.reaksi();//memanggil method reaksi
+        Percobaan2 cetak = new Percobaan2();//membuat objek baru
+        cetak.objek();//memanggil method objek
+        cetak.reaksi();//memanggil method rekasi
     }//mengakhiri method
 }//mengakhiri method
